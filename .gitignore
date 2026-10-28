@@ -1,0 +1,7 @@
+# Ignored directories
+docs/
+.superpowers/
+
+# System and temporary files
+.DS_Store
+*.tmp
