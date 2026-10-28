@@ -144,8 +144,8 @@ def main():
     # 6. Verificar botões de download e links de release
     print(f"[*] Verificando botões de download para as releases...")
     expected_releases = [
-        "https://github.com/geraldohomero/NarroPDF/releases",
-        "https://github.com/geraldohomero/Narro-Read-Selection-Aloud/releases"
+        "https://github.com/narro-tts/NarroPDF/releases",
+        "https://github.com/narro-tts/Narro-Read-Selection-Aloud/releases"
     ]
     for rel_url in expected_releases:
         if rel_url not in parser.external_links:
@@ -153,17 +153,18 @@ def main():
         else:
             print(f"[✓] Link de release validado: {rel_url}")
 
-    # 7. Verificar links de repositórios oficiais
+    # 7. Verificar links de repositórios e organização oficiais
     print(f"[*] Verificando links externos para o GitHub...")
     expected_repos = [
-        "https://github.com/geraldohomero/NarroPDF",
-        "https://github.com/geraldohomero/Narro-Read-Selection-Aloud"
+        "https://github.com/narro-tts",
+        "https://github.com/narro-tts/NarroPDF",
+        "https://github.com/narro-tts/Narro-Read-Selection-Aloud"
     ]
     for repo in expected_repos:
         if repo not in parser.external_links:
-            errors.append(f"Link esperado para o repositório {repo} não encontrado no HTML.")
+            errors.append(f"Link esperado para o repositório/organização {repo} não encontrado no HTML.")
         else:
-            print(f"[✓] Repositório oficial linkado: {repo}")
+            print(f"[✓] Link do GitHub validado: {repo}")
 
     # 8. Verificar internacionalização (i18n) e seletor de idiomas
     print(f"[*] Verificando suporte multi-idioma (i18n)...")

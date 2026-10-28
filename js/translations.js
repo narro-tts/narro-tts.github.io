@@ -157,7 +157,8 @@ const translations = {
     footer_heading_tech: "Technologies",
     footer_pdf_link: "NarroPDF (PDF Reader & Annotator)",
     footer_rsa_link: "Narro RSA (Selection & Clipboard)",
-    footer_author_link: "Developer Profile",
+    footer_org_link: "GitHub Organization",
+    footer_author_link: "GitHub Organization",
     footer_copyright: "© 2026 Narro Organization. Licensed under Open Source Licenses (MIT / GPL). Built following GNOME Libadwaita guidelines.",
     footer_back_to_top: "Back to top",
     modal_close_label: "Close viewer"
@@ -313,7 +314,8 @@ const translations = {
     footer_heading_tech: "Tecnologias",
     footer_pdf_link: "NarroPDF (Leitor e Anotador)",
     footer_rsa_link: "Narro RSA (Seleção e Clipboard)",
-    footer_author_link: "Perfil do Desenvolvedor",
+    footer_org_link: "Organização no GitHub",
+    footer_author_link: "Organização no GitHub",
     footer_copyright: "© 2026 Organização Narro. Licenciado sob licenças de Código Aberto (MIT / GPL). Construído com base nas diretrizes do GNOME Libadwaita.",
     footer_back_to_top: "Voltar ao topo",
     modal_close_label: "Fechar visualizador"
@@ -469,7 +471,8 @@ const translations = {
     footer_heading_tech: "核心技术",
     footer_pdf_link: "NarroPDF (PDF 阅读与批注)",
     footer_rsa_link: "Narro RSA (选区与剪贴板朗读)",
-    footer_author_link: "开发者 GitHub 主页",
+    footer_org_link: "GitHub 组织主页",
+    footer_author_link: "GitHub 组织主页",
     footer_copyright: "© 2026 Narro 组织。遵循开源协议 (MIT / GPL)。遵循 GNOME Libadwaita 规范开发。",
     footer_back_to_top: "返回顶部",
     modal_close_label: "关闭图片查看器"
