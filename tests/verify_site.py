@@ -141,15 +141,17 @@ def main():
         errors.append("Ainda existem âncoras apontando para #comparativo.")
     print("[✓] Seção de comparativo removida com sucesso.")
 
-    # 6. Verificar botões de cópia e comandos
-    print(f"[*] Verificando botões de cópia (.copy-btn)...")
-    if len(parser.copy_commands) < 2:
-        errors.append(f"Esperava pelo menos 2 botões de cópia Flatpak, encontrou {len(parser.copy_commands)}")
-    for cmd in parser.copy_commands:
-        if not cmd or not cmd.startswith('flatpak install'):
-            errors.append(f"Comando de cópia inválido ou vazio: {cmd}")
+    # 6. Verificar botões de download e links de release
+    print(f"[*] Verificando botões de download para as releases...")
+    expected_releases = [
+        "https://github.com/geraldohomero/NarroPDF/releases",
+        "https://github.com/geraldohomero/Narro-Read-Selection-Aloud/releases"
+    ]
+    for rel_url in expected_releases:
+        if rel_url not in parser.external_links:
+            errors.append(f"Link de release {rel_url} não encontrado no HTML.")
         else:
-            print(f"[✓] Comando de cópia validado: '{cmd}'")
+            print(f"[✓] Link de release validado: {rel_url}")
 
     # 7. Verificar links de repositórios oficiais
     print(f"[*] Verificando links externos para o GitHub...")

@@ -72,12 +72,12 @@ const translations = {
     shortcut_ctrlf: "Search in PDF",
     shortcut_ctrlz: "Undo Annotation",
 
-    install_pdf_badge: "Flatpak Bundle",
-    install_pdf_title: "Install or Build NarroPDF",
-    install_pdf_desc: "Packaged according to GNOME guidelines and sandboxed security.",
-    btn_copy: "Copy",
-    btn_copied: "Copied!",
-    btn_view_pdf_repo: "View NarroPDF on GitHub",
+    // NarroPDF Download
+    download_pdf_badge: "Latest Release",
+    download_pdf_title: "Download NarroPDF",
+    download_pdf_desc: "Get the latest Flatpak release package directly from GitHub.",
+    btn_download_release: "Download Latest Release",
+    btn_view_github: "View on GitHub",
 
     // Narro RSA
     badge_wayland: "GNOME / Wayland Native",
@@ -118,10 +118,10 @@ const translations = {
     action_pause: "Pause / Resume",
     action_stop: "Stop Playback",
 
-    install_rsa_badge: "Flatpak Exclusive",
-    install_rsa_title: "Install Narro RSA on your system",
-    install_rsa_desc: "Install the self-contained package directly from terminal.",
-    btn_view_rsa_repo: "View Narro RSA on GitHub",
+    // Narro RSA Download
+    download_rsa_badge: "Latest Release",
+    download_rsa_title: "Download Narro RSA",
+    download_rsa_desc: "Get the latest Flatpak release package directly from GitHub.",
 
     // Tech Section
     tech_badge: "Technology & Architecture",
@@ -228,12 +228,12 @@ const translations = {
     shortcut_ctrlf: "Buscar no PDF",
     shortcut_ctrlz: "Desfazer Ação",
 
-    install_pdf_badge: "Flatpak Bundle",
-    install_pdf_title: "Instale ou compile o NarroPDF",
-    install_pdf_desc: "Empacotado com as diretrizes do GNOME e isolamento de segurança.",
-    btn_copy: "Copiar",
-    btn_copied: "Copiado!",
-    btn_view_pdf_repo: "Ver Repositório NarroPDF no GitHub",
+    // NarroPDF Download
+    download_pdf_badge: "Última Versão",
+    download_pdf_title: "Baixar NarroPDF",
+    download_pdf_desc: "Obtenha o pacote de instalação Flatpak mais recente diretamente no GitHub.",
+    btn_download_release: "Baixar Última Versão",
+    btn_view_github: "Ver no GitHub",
 
     // Narro RSA
     badge_wayland: "GNOME / Wayland Nativo",
@@ -274,10 +274,10 @@ const translations = {
     action_pause: "Pausar / Retomar",
     action_stop: "Parar Reprodução",
 
-    install_rsa_badge: "Flatpak Exclusivo",
-    install_rsa_title: "Instale o Narro RSA no seu sistema",
-    install_rsa_desc: "Instale o pacote autocontido diretamente via linha de comando.",
-    btn_view_rsa_repo: "Ver Repositório Narro RSA no GitHub",
+    // Narro RSA Download
+    download_rsa_badge: "Última Versão",
+    download_rsa_title: "Baixar Narro RSA",
+    download_rsa_desc: "Obtenha o pacote de instalação Flatpak mais recente diretamente no GitHub.",
 
     // Tech Section
     tech_badge: "Tecnologia & Arquitetura",
@@ -384,12 +384,12 @@ const translations = {
     shortcut_ctrlf: "在文档中查找",
     shortcut_ctrlz: "撤销操作",
 
-    install_pdf_badge: "Flatpak 安装包",
-    install_pdf_title: "安装或构建 NarroPDF",
-    install_pdf_desc: "严格遵循 GNOME 规范与沙盒隔离安全机制打包。",
-    btn_copy: "复制",
-    btn_copied: "已复制！",
-    btn_view_pdf_repo: "在 GitHub 上查看 NarroPDF 仓库",
+    // NarroPDF Download
+    download_pdf_badge: "最新版本",
+    download_pdf_title: "下载 NarroPDF",
+    download_pdf_desc: "直接从 GitHub 获取最新的 Flatpak 发布安装包。",
+    btn_download_release: "下载最新发布版本",
+    btn_view_github: "在 GitHub 上查看",
 
     // Narro RSA
     badge_wayland: "GNOME / Wayland 原生",
@@ -430,10 +430,10 @@ const translations = {
     action_pause: "暂停 / 恢复播放",
     action_stop: "停止朗读播放",
 
-    install_rsa_badge: "Flatpak 专享打包",
-    install_rsa_title: "在您的系统中安装 Narro RSA",
-    install_rsa_desc: "通过命令行直接安装自包含的 Flatpak 安装包。",
-    btn_view_rsa_repo: "在 GitHub 上查看 Narro RSA 仓库",
+    // Narro RSA Download
+    download_rsa_badge: "最新版本",
+    download_rsa_title: "下载 Narro RSA",
+    download_rsa_desc: "直接从 GitHub 获取最新的 Flatpak 发布安装包。",
 
     // Tech Section
     tech_badge: "技术与架构",
