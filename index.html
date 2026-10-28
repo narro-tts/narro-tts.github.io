@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Narro Organization — Modern, accessible, and native Text-to-Speech (TTS) applications for Linux and GNOME: NarroPDF and Narro RSA.">
+  <meta name="keywords" content="Narro, NarroPDF, Narro RSA, TTS, Text-to-Speech, Linux, GNOME, Libadwaita, GTK4, Piper TTS, Edge TTS, Flatpak, Accessibility">
+  <meta name="author" content="Narro Organization">
+  <meta name="theme-color" content="#242424">
+
+  <!-- Open Graph / Meta Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Narro Organization | TTS & Accessibility Solutions for Linux GNOME">
+  <meta property="og:description" content="Discover NarroPDF and Narro RSA: modern native Text-to-Speech (TTS) readers for the GNOME desktop with Piper offline neural models and Edge TTS.">
+  <meta property="og:image" content="assets/img/logo-narro.png">
+
+  <title data-i18n="page_title">Narro Organization | TTS & Accessibility Solutions for Linux GNOME</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/img/logo-narro.png">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Skip to Content Link -->
+  <a href="#main-content" class="skip-link" data-i18n="skip_link">Skip to main content</a>
+
+  <!-- Header / Fixed Navigation -->
+  <header class="site-header" id="header" role="banner">
+    <div class="container header-container">
+      <a href="#hero" class="brand" aria-label="Narro Organization - Home">
+        <img src="assets/img/logo-narro.png" alt="Narro Logo" class="brand-logo" width="38" height="38">
+        <span class="brand-text">Narro</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="main-nav" id="main-nav" role="navigation" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="#hero" class="nav-link active" data-i18n="nav_home">Home</a></li>
+          <li><a href="#narropdf" class="nav-link" data-i18n="nav_narropdf">NarroPDF</a></li>
+          <li><a href="#narrorsa" class="nav-link" data-i18n="nav_narrorsa">Narro RSA</a></li>
+          <li><a href="#tecnologias" class="nav-link" data-i18n="nav_tech">Technologies</a></li>
+          <li><a href="#sobre" class="nav-link" data-i18n="nav_about">About</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions: Language Switcher, Theme Toggle, GitHub, Mobile Menu -->
+      <div class="header-actions">
+        <!-- Language Switcher Dropdown -->
+        <div class="lang-selector-wrapper" id="lang-selector-wrapper">
+          <button id="lang-menu-btn" class="btn btn-secondary btn-sm lang-btn" aria-haspopup="true" aria-expanded="false" aria-label="Select language" title="Select language">
+            <svg class="icon icon-globe" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+            <span id="current-lang-code" class="lang-code-text">EN</span>
+            <svg class="icon icon-chevron" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div id="lang-dropdown" class="lang-dropdown" role="menu" aria-label="Languages">
+            <button class="lang-option active" data-lang="en" role="menuitem">
+              <span class="lang-option-name">English</span>
+              <span class="lang-option-badge">EN</span>
+            </button>
+            <button class="lang-option" data-lang="pt-BR" role="menuitem">
+              <span class="lang-option-name">Português (Brasil)</span>
+              <span class="lang-option-badge">PT</span>
+            </button>
+            <button class="lang-option" data-lang="zh-CN" role="menuitem">
+              <span class="lang-option-name">简体中文</span>
+              <span class="lang-option-badge">ZH</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Theme Toggle Button -->
+        <button id="theme-toggle" class="btn-icon" aria-label="Switch between light and dark theme" title="Toggle theme">
+          <!-- Sun Icon (Light Mode) -->
+          <svg class="icon icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <!-- Moon Icon (Dark Mode) -->
+          <svg class="icon icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- GitHub Button -->
+        <a href="https://github.com/geraldohomero" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm header-github" title="GitHub Profile">
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+          </svg>
+          <span>GitHub</span>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-menu-toggle" class="btn-icon mobile-only" aria-label="Toggle navigation menu" aria-expanded="false">
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content" role="main">
+    <!-- Hero Section -->
+    <section class="section hero-section" id="hero">
+      <div class="container hero-container">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          <span data-i18n="hero_badge">Open Source Ecosystem for Linux & GNOME</span>
+        </div>
+
+        <div class="hero-logo-wrapper">
+          <img src="assets/img/logo-narro.png" alt="Narro Organization Logo" class="hero-main-logo" width="130" height="130">
+        </div>
+
+        <h1 class="hero-title">
+          <span data-i18n="hero_title">Accessibility & Native Speech Synthesis for Linux</span>
+        </h1>
+
+        <p class="hero-description" data-i18n="hero_description">
+          The <strong>Narro Organization</strong> develops modern, accessible <em>Text-to-Speech (TTS)</em> applications for the GNOME desktop. We turn any text or document into natural speech with real-time visual synchronization, 100% offline neural models, and deep system integration.
+        </p>
+
+        <!-- Pillars -->
+        <div class="hero-pillars">
+          <div class="pillar-item">
+            <div class="pillar-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <span data-i18n="pillar_opensource">100% Open Source</span>
+          </div>
+
+          <div class="pillar-item">
+            <div class="pillar-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+            </div>
+            <span data-i18n="pillar_piper">Piper Neural Offline</span>
+          </div>
+
+          <div class="pillar-item">
+            <div class="pillar-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M8 12h8"></path><path d="M12 8v8"></path></svg>
+            </div>
+            <span data-i18n="pillar_gnome">GNOME Libadwaita Design</span>
+          </div>
+
+          <div class="pillar-item">
+            <div class="pillar-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+            </div>
+            <span data-i18n="pillar_flatpak">Flatpak Sandboxed</span>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="hero-actions">
+          <a href="#narropdf" class="btn btn-primary btn-lg">
+            <span data-i18n="btn_explore_apps">Explore Applications</span>
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+          </a>
+          <a href="#sobre" class="btn btn-secondary btn-lg">
+            <span data-i18n="btn_about_narro">About Narro</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visual Divider -->
+    <div class="section-divider"></div>
+
+    <!-- SECTION 1: NarroPDF -->
+    <section class="section app-section" id="narropdf">
+      <div class="container">
+        <!-- App Header Card -->
+        <div class="app-header-card">
+          <div class="app-brand-row">
+            <div class="app-icon-wrapper">
+              <img src="assets/img/narro-pdf-logo.png" alt="NarroPDF Icon" class="app-icon" width="80" height="80">
+            </div>
+            <div class="app-title-group">
+              <div class="app-badge-row">
+                <span class="badge badge-blue" data-i18n="badge_gtk4">GTK4 & Libadwaita</span>
+                <span class="badge badge-purple" data-i18n="badge_engines">Piper Neural + Edge TTS</span>
+                <span class="badge badge-green" data-i18n="badge_reader_annotator">Reader & Annotator</span>
+              </div>
+              <h2 class="app-title">NarroPDF</h2>
+              <p class="app-subtitle" data-i18n="narropdf_subtitle">Modern, Minimalist PDF Reader and Annotator with Synchronized Speech Synthesis</p>
+            </div>
+          </div>
+          <p class="app-description" data-i18n="narropdf_desc">
+            <strong>NarroPDF</strong> is a modern, minimalist, and accessible PDF reader and annotator built in Python using <strong>GTK4</strong> and <strong>Libadwaita</strong>. It combines advanced document viewing, rich text annotation tools, and an integrated Text-to-Speech (TTS) synthesizer with real-time visual synchronization.
+          </p>
+        </div>
+
+        <!-- Showcase Visual of NarroPDF -->
+        <div class="showcase-card">
+          <div class="showcase-header">
+            <div class="window-controls">
+              <span class="dot close"></span>
+              <span class="dot minimize"></span>
+              <span class="dot maximize"></span>
+            </div>
+            <span class="window-title" data-i18n="showcase_narropdf_title">NarroPDF — Main Window & Synchronized TTS Playback</span>
+            <div class="window-action">
+              <button class="btn btn-xs btn-outline zoom-trigger" data-target="assets/img/narro-pdf-main.png" data-caption="NarroPDF main interface showing document reading, synchronized word highlighting, sidebar, and TTS playback bar">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                <span data-i18n="zoom_button">Enlarge Screenshot</span>
+              </button>
+            </div>
+          </div>
+          <div class="showcase-body">
+            <img src="assets/img/narro-pdf-main.png" alt="NarroPDF screenshot showing real-time synchronized speech reading" class="showcase-img zoomable-img" data-caption="NarroPDF main interface showing document reading, synchronized word highlighting, sidebar, and TTS playback bar">
+          </div>
+        </div>
+
+        <!-- NarroPDF Features Grid -->
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon icon-blue">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg>
+            </div>
+            <h3 data-i18n="feature_pdf_sync_title">Word-by-Word Synchronization</h3>
+            <p data-i18n="feature_pdf_sync_desc">Follow along as you listen. NarroPDF visually highlights each sentence and word in real-time synchronization with neural voice synthesis.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon icon-teal">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+            </div>
+            <h3 data-i18n="feature_pdf_controls_title">Interactive Playback Controls</h3>
+            <p data-i18n="feature_pdf_controls_desc">Bottom playback bar and right-side panel: play/pause, stop, skip sentence, loop mode, speed adjustment from 0.5x up to 4.0x, and double-click any sentence to start reading immediately.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon icon-yellow">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+            </div>
+            <h3 data-i18n="feature_pdf_annotations_title">Annotations & Markups</h3>
+            <p data-i18n="feature_pdf_annotations_desc">Highlight, Underline, and Notes with interactive text entry. Resizable handles at selection boundaries, custom opacity palette (10% to 100%), and full Undo/Redo (Ctrl+Z, Ctrl+Shift+Z).</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon icon-purple">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+            </div>
+            <h3 data-i18n="feature_pdf_sidebar_title">Comprehensive Left Sidebar</h3>
+            <p data-i18n="feature_pdf_sidebar_desc">Three dedicated tabs: Pages thumbnail list, hierarchical Table of Contents (TOC) with indentation, and consolidated Annotations list with bidirectional synchronization.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon icon-red">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"></path><path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v2"></path><path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8"></path><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"></path></svg>
+            </div>
+            <h3 data-i18n="feature_pdf_hand_title">Smart Reading & Hand Mode</h3>
+            <p data-i18n="feature_pdf_hand_desc">Smooth Hand Mode (Ctrl+1) with Drag-to-Scroll navigation, automatic hyphenation joining across line breaks, and smart margin/header filtering for natural speech flow.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon icon-green">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            </div>
+            <h3 data-i18n="feature_pdf_safety_title">Safe Exit Protection</h3>
+            <p data-i18n="feature_pdf_safety_desc">Built strictly following GNOME Libadwaita design guidelines with safe exit confirmation to prevent losing unsaved annotations.</p>
+          </div>
+        </div>
+
+        <!-- Shortcuts Card -->
+        <div class="shortcuts-card">
+          <h4 class="shortcuts-title">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect><line x1="6" y1="8" x2="6.01" y2="8"></line><line x1="10" y1="8" x2="10.01" y2="8"></line><line x1="14" y1="8" x2="14.01" y2="8"></line><line x1="18" y1="8" x2="18.01" y2="8"></line><line x1="6" y1="12" x2="6.01" y2="12"></line><line x1="10" y1="12" x2="10.01" y2="12"></line><line x1="14" y1="12" x2="14.01" y2="12"></line><line x1="18" y1="12" x2="18.01" y2="12"></line><line x1="6" y1="16" x2="18" y2="16"></line></svg>
+            <span data-i18n="shortcuts_pdf_title">Productivity Keyboard Shortcuts</span>
+          </h4>
+          <div class="shortcuts-list">
+            <div class="shortcut-pill"><kbd>Space</kbd> <span data-i18n="shortcut_space">Play / Pause Speech</span></div>
+            <div class="shortcut-pill"><kbd>Ctrl</kbd> + <kbd>1</kbd> <span data-i18n="shortcut_ctrl1">Hand Mode (Drag-to-Scroll)</span></div>
+            <div class="shortcut-pill"><kbd>Ctrl</kbd> + <kbd>4</kbd> <span data-i18n="shortcut_ctrl4">Selection Mode</span></div>
+            <div class="shortcut-pill"><kbd>1</kbd> <span data-i18n="shortcut_1">Highlight Tool</span></div>
+            <div class="shortcut-pill"><kbd>2</kbd> <span data-i18n="shortcut_2">Underline Tool</span></div>
+            <div class="shortcut-pill"><kbd>3</kbd> <span data-i18n="shortcut_3">Add Note Tool</span></div>
+            <div class="shortcut-pill"><kbd>Ctrl</kbd> + <kbd>F</kbd> <span data-i18n="shortcut_ctrlf">Search in PDF</span></div>
+            <div class="shortcut-pill"><kbd>Ctrl</kbd> + <kbd>Z</kbd> <span data-i18n="shortcut_ctrlz">Undo Annotation</span></div>
+          </div>
+        </div>
+
+        <!-- NarroPDF Flatpak Install Box -->
+        <div class="install-card">
+          <div class="install-info">
+            <div class="install-badge" data-i18n="install_pdf_badge">Flatpak Bundle</div>
+            <h4 class="install-title" data-i18n="install_pdf_title">Install or Build NarroPDF</h4>
+            <p class="install-text" data-i18n="install_pdf_desc">Packaged according to GNOME guidelines and sandboxed security.</p>
+          </div>
+          <div class="terminal-box">
+            <div class="terminal-header">
+              <span class="terminal-title">Terminal</span>
+              <button class="copy-btn" data-clipboard="flatpak install --user org.geraldohomero.NarroPdf.flatpak" title="Copy command">
+                <svg class="icon icon-copy" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                <span class="copy-label" data-i18n="btn_copy">Copy</span>
+              </button>
+            </div>
+            <pre class="terminal-code"><code><span class="prompt">$</span> flatpak install --user org.geraldohomero.NarroPdf.flatpak</code></pre>
+          </div>
+          <div class="install-footer">
+            <a href="https://github.com/geraldohomero/NarroPDF" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              <span data-i18n="btn_view_pdf_repo">View NarroPDF on GitHub</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visual Divider -->
+    <div class="section-divider"></div>
+
+    <!-- SECTION 2: Narro RSA -->
+    <section class="section app-section" id="narrorsa">
+      <div class="container">
+        <!-- App Header Card -->
+        <div class="app-header-card">
+          <div class="app-brand-row">
+            <div class="app-icon-wrapper">
+              <img src="assets/img/narro-rsa-logo.png" alt="Narro RSA Icon" class="app-icon" width="80" height="80">
+            </div>
+            <div class="app-title-group">
+              <div class="app-badge-row">
+                <span class="badge badge-blue" data-i18n="badge_wayland">GNOME / Wayland Native</span>
+                <span class="badge badge-purple" data-i18n="badge_hotkeys">Global Hotkeys</span>
+                <span class="badge badge-green" data-i18n="badge_selection_reader">Selection Reader</span>
+              </div>
+              <h2 class="app-title" data-i18n="narrorsa_title">Narro - Read Selection Aloud (RSA)</h2>
+              <p class="app-subtitle" data-i18n="narrorsa_subtitle">Universal Text & Clipboard Reader for GNOME/Wayland with Auto-Configured Shortcuts</p>
+            </div>
+          </div>
+          <p class="app-description" data-i18n="narrorsa_desc">
+            <strong>Narro RSA</strong> turns any application on your system into material for listening. Select any text in your browser, terminal, PDF reader, or document, copy it, and use a global keyboard shortcut to launch the native GTK4 player with reading history, speed controls, and offline neural voice downloads.
+          </p>
+        </div>
+
+        <!-- Showcase Visual of Narro RSA (Tabs: Main vs Settings) -->
+        <div class="showcase-card">
+          <div class="showcase-tabs-header">
+            <div class="tab-buttons" role="tablist" aria-label="Narro RSA Screenshot Tabs">
+              <button class="tab-btn active" role="tab" aria-selected="true" data-tab="main" id="tab-btn-main">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                <span data-i18n="tab_main_window">Main Window & Player</span>
+              </button>
+              <button class="tab-btn" role="tab" aria-selected="false" data-tab="settings" id="tab-btn-settings">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                <span data-i18n="tab_settings_window">Settings & Piper Models</span>
+              </button>
+            </div>
+            <button class="btn btn-xs btn-outline zoom-trigger" id="rsa-zoom-trigger" data-target="assets/img/narro-rsa-main.png" data-caption="Narro RSA — Main Window with TTS Player, Reading History and Playback Controls">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              <span data-i18n="zoom_button">Enlarge Screenshot</span>
+            </button>
+          </div>
+
+          <div class="showcase-tab-content">
+            <!-- Pane 1: Main Window -->
+            <div class="tab-pane active" id="pane-main" role="tabpanel" aria-labelledby="tab-btn-main">
+              <img src="assets/img/narro-rsa-main.png" alt="Narro RSA Main Window with speech controls and text history" class="showcase-img zoomable-img" data-caption="Narro RSA — Main Window with TTS Player, Reading History and Playback Controls">
+            </div>
+
+            <!-- Pane 2: Settings Window -->
+            <div class="tab-pane" id="pane-settings" role="tabpanel" aria-labelledby="tab-btn-settings">
+              <img src="assets/img/narro-rsa-settings.png" alt="Narro RSA Settings Window with Piper model downloads" class="showcase-img zoomable-img" data-caption="Narro RSA — Dynamic Settings Dialog with Piper Voice Management and Real-Time Downloads">
+            </div>
+          </div>
+        </div>
+
+        <!-- Narro RSA Features Grid -->
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon icon-blue">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            </div>
+            <h3 data-i18n="feature_rsa_universal_title">Universal Reading in Any App</h3>
+            <p data-i18n="feature_rsa_universal_desc">Select text in any application (browser, terminal, editor, chat) and listen immediately. No need to open separate files: a simple hotkey triggers the reading.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon icon-purple">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+            </div>
+            <h3 data-i18n="feature_rsa_shortcuts_title">Auto-Configured Global Hotkeys</h3>
+            <p data-i18n="feature_rsa_shortcuts_desc">On first launch, Narro RSA automatically registers and activates all global GNOME keyboard shortcuts without requiring manual system setup.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon icon-teal">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            </div>
+            <h3 data-i18n="feature_rsa_dynamic_title">Dynamic Piper Model Downloads</h3>
+            <p data-i18n="feature_rsa_dynamic_desc">Browse a rich catalog of languages and local neural voices for Piper TTS, monitoring downloads with real-time progress bars right inside the settings window.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon icon-yellow">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            </div>
+            <h3 data-i18n="feature_rsa_speed_title">Real-Time Speed Control via MPV</h3>
+            <p data-i18n="feature_rsa_speed_desc">Adjust speech playback speed on the fly via high-precision MPV IPC Unix sockets, seamlessly accelerating or slowing down speech.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon icon-red">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 1 10 10c0 5.52-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2z"></path><path d="M12 6v6l4 2"></path></svg>
+            </div>
+            <h3 data-i18n="feature_rsa_tray_title">System Tray Indicator</h3>
+            <p data-i18n="feature_rsa_tray_desc">Optional host AppIndicator running in the notification area to trigger playback, pause, or open preferences with a single click.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon icon-green">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            </div>
+            <h3 data-i18n="feature_rsa_engines_title">Online and Offline Dual Engines</h3>
+            <p data-i18n="feature_rsa_engines_desc">Effortlessly switch between local, privacy-first Piper TTS offline neural voices and expressive Microsoft Edge TTS natural cloud voices.</p>
+          </div>
+        </div>
+
+        <!-- Global GNOME Hotkeys Table -->
+        <div class="shortcuts-card">
+          <h4 class="shortcuts-title">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect><line x1="6" y1="8" x2="6.01" y2="8"></line><line x1="10" y1="8" x2="10.01" y2="8"></line><line x1="14" y1="8" x2="14.01" y2="8"></line><line x1="18" y1="8" x2="18.01" y2="8"></line><line x1="6" y1="12" x2="6.01" y2="12"></line><line x1="10" y1="12" x2="10.01" y2="12"></line><line x1="14" y1="12" x2="14.01" y2="12"></line><line x1="18" y1="12" x2="18.01" y2="12"></line><line x1="6" y1="16" x2="18" y2="16"></line></svg>
+            <span data-i18n="shortcuts_rsa_title">Global Shortcuts Registered in GNOME</span>
+          </h4>
+          <div class="shortcuts-table-wrapper">
+            <table class="shortcuts-table">
+              <thead>
+                <tr>
+                  <th data-i18n="th_action">Action</th>
+                  <th data-i18n="th_shortcut">Default Shortcut</th>
+                  <th data-i18n="th_command">Executed Command</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong data-i18n="action_clipboard">Read Clipboard</strong></td>
+                  <td><kbd>Super</kbd> + <kbd>Alt</kbd> + <kbd>L</kbd></td>
+                  <td><code>flatpak run com.github.geraldohomero.NarroRsa --play</code></td>
+                </tr>
+                <tr>
+                  <td><strong data-i18n="action_primary">Read Selection Direct</strong></td>
+                  <td><kbd>Ctrl</kbd> + <kbd>\</kbd></td>
+                  <td><code>flatpak run com.github.geraldohomero.NarroRsa --primary</code></td>
+                </tr>
+                <tr>
+                  <td><strong data-i18n="action_pause">Pause / Resume</strong></td>
+                  <td><kbd>Super</kbd> + <kbd>Alt</kbd> + <kbd>J</kbd></td>
+                  <td><code>flatpak run com.github.geraldohomero.NarroRsa --pause</code></td>
+                </tr>
+                <tr>
+                  <td><strong data-i18n="action_stop">Stop Playback</strong></td>
+                  <td><kbd>Super</kbd> + <kbd>Alt</kbd> + <kbd>K</kbd></td>
+                  <td><code>flatpak run com.github.geraldohomero.NarroRsa --stop</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Narro RSA Flatpak Install Box -->
+        <div class="install-card">
+          <div class="install-info">
+            <div class="install-badge" data-i18n="install_rsa_badge">Flatpak Exclusive</div>
+            <h4 class="install-title" data-i18n="install_rsa_title">Install Narro RSA on your system</h4>
+            <p class="install-text" data-i18n="install_rsa_desc">Install the self-contained package directly from terminal.</p>
+          </div>
+          <div class="terminal-box">
+            <div class="terminal-header">
+              <span class="terminal-title">Terminal</span>
+              <button class="copy-btn" data-clipboard="flatpak install --user ./com.github.geraldohomero.NarroRsa.flatpak" title="Copy command">
+                <svg class="icon icon-copy" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                <span class="copy-label" data-i18n="btn_copy">Copy</span>
+              </button>
+            </div>
+            <pre class="terminal-code"><code><span class="prompt">$</span> flatpak install --user ./com.github.geraldohomero.NarroRsa.flatpak</code></pre>
+          </div>
+          <div class="install-footer">
+            <a href="https://github.com/geraldohomero/Narro-Read-Selection-Aloud" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              <span data-i18n="btn_view_rsa_repo">View Narro RSA on GitHub</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visual Divider -->
+    <div class="section-divider"></div>
+
+    <!-- SECTION 3: TTS Technologies & Architecture -->
+    <section class="section tech-section" id="tecnologias">
+      <div class="container">
+        <div class="section-heading text-center">
+          <span class="section-badge" data-i18n="tech_badge">Technology & Architecture</span>
+          <h2 class="section-title" data-i18n="tech_title">What Powers Narro Applications</h2>
+          <p class="section-subtitle" data-i18n="tech_subtitle">Built on open standards, respecting your data privacy and the principles of the free software desktop.</p>
+        </div>
+
+        <div class="tech-grid">
+          <!-- Card Piper TTS -->
+          <div class="tech-card">
+            <div class="tech-card-icon icon-blue">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="22"></line></svg>
+            </div>
+            <h3 data-i18n="tech_piper_title">Piper TTS — Neural & 100% Offline</h3>
+            <p data-i18n="tech_piper_desc">Piper is a local, ultra-fast neural text-to-speech synthesizer optimized for consumer hardware. It generates impressively natural speech <strong>without sending a single byte over the Internet</strong>, guaranteeing total privacy for confidential reading and offline availability while traveling.</p>
+          </div>
+
+          <!-- Card Edge TTS -->
+          <div class="tech-card">
+            <div class="tech-card-icon icon-teal">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            </div>
+            <h3 data-i18n="tech_edge_title">Microsoft Edge TTS — Natural Cloud Voices</h3>
+            <p data-i18n="tech_edge_desc">For users looking for human-like inflection and broad language variety, Edge TTS provides hundreds of expressive neural voices in over 70 languages and dialects with rich prosody and no API cost.</p>
+          </div>
+
+          <!-- Card GTK4 & Libadwaita -->
+          <div class="tech-card">
+            <div class="tech-card-icon icon-purple">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+            </div>
+            <h3 data-i18n="tech_gtk4_title">GTK4 & Libadwaita — GNOME HIG</h3>
+            <p data-i18n="tech_gtk4_desc">Native desktop interfaces that blend seamlessly into GNOME. Automatic light and dark theme switching, responsive layouts, Cantarell typography, and polished squircle design.</p>
+          </div>
+
+          <!-- Card Flatpak & Wayland -->
+          <div class="tech-card">
+            <div class="tech-card-icon icon-green">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+            </div>
+            <h3 data-i18n="tech_flatpak_title">Flatpak & Wayland — Security & Portability</h3>
+            <p data-i18n="tech_flatpak_desc">Universal distribution inside a secure sandbox container. Runs consistently across Fedora, Arch Linux, Debian, Ubuntu, openSUSE, and any other modern Linux distribution.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visual Divider -->
+    <div class="section-divider"></div>
+
+    <!-- SECTION 4: About the Narro Organization -->
+    <section class="section about-section" id="sobre">
+      <div class="container">
+        <div class="about-card">
+          <div class="about-grid">
+            <div class="about-content">
+              <span class="section-badge" data-i18n="about_badge">Our Mission</span>
+              <h2 class="section-title" data-i18n="about_title">About the Narro Organization</h2>
+              <p class="about-text" data-i18n="about_text1">
+                The <strong>Narro Organization</strong> was founded on the conviction that the Linux desktop deserves Text-to-Speech and accessibility tools that are as elegant, well-integrated, and intuitive as those found on proprietary platforms.
+              </p>
+              <p class="about-text" data-i18n="about_text2">
+                Whether for students reviewing textbooks, researchers parsing academic papers, professionals boosting productivity while multitasking, or people with visual impairments or dyslexia, our mission is to deliver first-class open-source solutions.
+              </p>
+              <div class="about-stats">
+                <div class="stat-item">
+                  <span class="stat-number">2</span>
+                  <span class="stat-label" data-i18n="stat_projects">Active Projects</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-number">100%</span>
+                  <span class="stat-label" data-i18n="stat_opensource">Free & Open Source</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-number">Offline</span>
+                  <span class="stat-label" data-i18n="stat_offline">Total Privacy</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="about-illustration">
+              <div class="illustration-box">
+                <img src="assets/img/logo-narro.png" alt="Narro Emblem" class="about-logo" width="160" height="160">
+                <div class="quote-box">
+                  <p class="quote-text" data-i18n="quote_text">“Accessibility is not merely a feature; it is a fundamental right in the free software desktop.”</p>
+                  <span class="quote-author" data-i18n="quote_author">— Narro Organization</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Community Callout -->
+          <div class="contribute-banner">
+            <div class="contribute-info">
+              <h4 data-i18n="banner_join_title">Join the Community</h4>
+              <p data-i18n="banner_join_desc">Narro projects are developed openly and collaboratively on GitHub. Contributions in code, translations, bug reports, and new ideas are warmly welcomed!</p>
+            </div>
+            <div class="contribute-actions">
+              <a href="https://github.com/geraldohomero" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                <span data-i18n="btn_explore_github">Explore on GitHub</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Institutional Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-container">
+      <div class="footer-col brand-col">
+        <div class="footer-brand">
+          <img src="assets/img/logo-narro.png" alt="Narro Logo" class="footer-logo" width="32" height="32">
+          <span class="footer-title">Narro Organization</span>
+        </div>
+        <p class="footer-text" data-i18n="footer_text">
+          Developing modern, accessible Text-to-Speech (TTS) tools native to the Linux and GNOME ecosystem.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h5 class="footer-heading" data-i18n="footer_heading_apps">Applications</h5>
+        <ul class="footer-links">
+          <li><a href="#narropdf" data-i18n="footer_pdf_link">NarroPDF (PDF Reader & Annotator)</a></li>
+          <li><a href="#narrorsa" data-i18n="footer_rsa_link">Narro RSA (Selection & Clipboard)</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5 class="footer-heading" data-i18n="footer_heading_code">Source Code</h5>
+        <ul class="footer-links">
+          <li><a href="https://github.com/geraldohomero/NarroPDF" target="_blank" rel="noopener noreferrer">GitHub / NarroPDF</a></li>
+          <li><a href="https://github.com/geraldohomero/Narro-Read-Selection-Aloud" target="_blank" rel="noopener noreferrer">GitHub / Narro RSA</a></li>
+          <li><a href="https://github.com/geraldohomero" target="_blank" rel="noopener noreferrer" data-i18n="footer_author_link">Developer Profile</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5 class="footer-heading" data-i18n="footer_heading_tech">Technologies</h5>
+        <ul class="footer-links">
+          <li><a href="https://github.com/rhasspy/piper" target="_blank" rel="noopener noreferrer">Piper TTS</a></li>
+          <li><a href="https://gtk.org" target="_blank" rel="noopener noreferrer">GTK4 & Libadwaita</a></li>
+          <li><a href="https://flatpak.org" target="_blank" rel="noopener noreferrer">Flatpak</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-container">
+        <p class="copyright" data-i18n="footer_copyright">
+          © 2026 Narro Organization. Licensed under Open Source Licenses (MIT / GPL). Built following GNOME Libadwaita guidelines.
+        </p>
+        <div class="footer-back-to-top">
+          <a href="#hero" class="back-to-top-link" aria-label="Back to top">
+            <span data-i18n="footer_back_to_top">Back to top</span>
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"></polyline></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox Modal for Screenshots -->
+  <div id="lightbox-modal" class="lightbox-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Screenshot Viewer">
+    <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightbox-close" aria-label="Close viewer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <div class="lightbox-image-wrapper">
+        <img src="assets/img/logo-narro.png" alt="Enlarged screenshot preview" id="lightbox-img" class="lightbox-img">
+      </div>
+      <p id="lightbox-caption" class="lightbox-caption"></p>
+    </div>
+  </div>
+
+  <!-- Scripts: Translations Dictionary first, then Main Script -->
+  <script src="js/translations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
