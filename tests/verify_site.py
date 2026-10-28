@@ -144,8 +144,8 @@ def main():
     # 6. Verificar botões de download e links de release
     print(f"[*] Verificando botões de download para as releases...")
     expected_releases = [
-        "https://github.com/narro-tts/NarroPDF/releases",
-        "https://github.com/narro-tts/Narro-Read-Selection-Aloud/releases"
+        "https://github.com/geraldohomero/NarroPDF/releases",
+        "https://github.com/geraldohomero/Narro-Read-Selection-Aloud/releases"
     ]
     for rel_url in expected_releases:
         if rel_url not in parser.external_links:
@@ -157,8 +157,8 @@ def main():
     print(f"[*] Verificando links externos para o GitHub...")
     expected_repos = [
         "https://github.com/narro-tts",
-        "https://github.com/narro-tts/NarroPDF",
-        "https://github.com/narro-tts/Narro-Read-Selection-Aloud"
+        "https://github.com/geraldohomero/NarroPDF",
+        "https://github.com/geraldohomero/Narro-Read-Selection-Aloud"
     ]
     for repo in expected_repos:
         if repo not in parser.external_links:
